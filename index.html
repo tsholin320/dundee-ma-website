@@ -593,7 +593,7 @@
       gap: 40px;
     }
 
-    .team-card { }
+    .team-card { position: relative; }
 
     .team-photo {
       width: 100%;
@@ -606,7 +606,54 @@
       justify-content: center;
       color: var(--text-muted);
       font-size: 13px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
     }
+
+    .team-photo-hover {
+      position: absolute;
+      inset: 0;
+      background: rgba(18, 46, 27, 0.88);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .team-photo:hover .team-photo-hover { opacity: 1; }
+
+    .team-photo-hover-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-style: italic;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.6;
+      text-align: center;
+      margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .team-photo-hover-btn {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      border: 1px solid var(--gold);
+      padding: 8px 20px;
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .team-photo-hover-btn:hover { background: rgba(139,125,85,0.2); }
 
     .team-name {
       font-family: 'Cormorant Garamond', serif;
@@ -630,6 +677,69 @@
       color: var(--text-muted);
       line-height: 1.75;
     }
+
+    /* BIO MODAL */
+    .bio-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .bio-modal-overlay.active { display: flex; }
+
+    .bio-modal {
+      background: var(--white);
+      max-width: 680px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      padding: 52px;
+      position: relative;
+    }
+
+    .bio-modal-close {
+      position: absolute;
+      top: 20px; right: 24px;
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-muted);
+      line-height: 1;
+    }
+
+    .bio-modal-close:hover { color: var(--text); }
+
+    .bio-modal-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 4px;
+    }
+
+    .bio-modal-title {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+
+    .bio-modal-body {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.85;
+    }
+
+    .bio-modal-body p { margin-bottom: 16px; }
+    .bio-modal-body p:last-child { margin-bottom: 0; }
 
     /* CONTACT */
     .contact { background: var(--cream); }
@@ -1035,22 +1145,37 @@
       <p class="section-lead">Your deal is led by experienced practitioners — not handed off. Add your team members below to personalize this section.</p>
       <div class="team-grid">
         <div class="team-card">
-          <div class="team-photo"><img src="travis-headshot.jpg" alt="Travis Sholin" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+          <div class="team-photo" onclick="openBio('travis')">
+            <img src="travis-headshot.jpg" alt="Travis Sholin" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+            <div class="team-photo-hover">
+              <div class="team-photo-hover-text">Travis Sholin is the CEO of the Dundee family of companies. His life's work is guiding families through the full circle of wealth — from business exit to legacy planning and next-generation stewardship.</div>
+              <button class="team-photo-hover-btn">Read Full Bio</button>
+            </div>
+          </div>
           <div class="team-name">Travis Sholin</div>
-          <div class="team-title">CEO</div>
-          <p class="team-bio">Travis Sholin is the CEO of the Dundee family of companies — including Dundee M&A, Dundee Family Office, Dundee Wealth Management, and Dundee Accounting. His life's work is guiding families through the full circle of wealth: from business exit and transaction advisory to legacy planning and next-generation stewardship.<br><br>A Certified Financial Planner™ with a Ph.D. from Kansas State University, an MBA from Creighton, and a Finance degree from the University of Colorado at Colorado Springs, Travis brings rare depth across the disciplines that matter most to business-owning families. He integrates M&A advisory, financial therapy, estate planning, CFO and tax strategy, and investment management into a seamless, family-centered experience.<br><br>Travis serves on the boards of the Financial Therapy Association, the UNO Banking & Finance Advisory Board, and the UNO Economics Board. A committed Rotarian and advisor to the Healing Kadi Foundation, he spent three months volunteering in Uganda and remains active in humanitarian work across Africa.<br><br>Outside of work, Travis enjoys traveling, public speaking, and spending time with his wife and five children.</p>
+          <div class="team-title">CEO / Family Office Principal</div>
         </div>
         <div class="team-card">
-          <div class="team-photo">[Photo]</div>
+          <div class="team-photo" onclick="openBio('member2')">
+            <div style="color:var(--text-muted);font-size:13px;">[Photo]</div>
+            <div class="team-photo-hover">
+              <div class="team-photo-hover-text">Specialist in sell-side process management and buyer due diligence.</div>
+              <button class="team-photo-hover-btn">Read Full Bio</button>
+            </div>
+          </div>
           <div class="team-name">Team Member</div>
           <div class="team-title">Director, Transaction Advisory</div>
-          <p class="team-bio">Specialist in sell-side process management and buyer due diligence. Prior experience at a Big Four advisory practice and a regional private equity firm.</p>
         </div>
         <div class="team-card">
-          <div class="team-photo">[Photo]</div>
+          <div class="team-photo" onclick="openBio('member3')">
+            <div style="color:var(--text-muted);font-size:13px;">[Photo]</div>
+            <div class="team-photo-hover">
+              <div class="team-photo-hover-text">Leads business valuation engagements and financial modeling.</div>
+              <button class="team-photo-hover-btn">Read Full Bio</button>
+            </div>
+          </div>
           <div class="team-name">Team Member</div>
           <div class="team-title">Associate Director, Valuations</div>
-          <p class="team-bio">Leads business valuation engagements and financial modeling. CFA charterholder with deep expertise in EBITDA normalization and market comparable analysis.</p>
         </div>
       </div>
     </div>
@@ -1154,6 +1279,64 @@
       </div>
     </div>
   </footer>
+
+  <!-- BIO MODAL -->
+  <div class="bio-modal-overlay" id="bioModal" onclick="closeBioOnOverlay(event)">
+    <div class="bio-modal">
+      <button class="bio-modal-close" onclick="closeBio()">&#times;</button>
+      <div class="bio-modal-name" id="modalName"></div>
+      <div class="bio-modal-title" id="modalTitle"></div>
+      <div class="bio-modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    const bios = {
+      travis: {
+        name: 'Travis Sholin',
+        title: 'CEO / Family Office Principal',
+        body: `
+          <p>Travis Sholin is the CEO of the Dundee family of companies — including Dundee M&A, Dundee Family Office, Dundee Wealth Management, and Dundee Accounting. His life's work is guiding families through the full circle of wealth: from business exit and transaction advisory to legacy planning and next-generation stewardship.</p>
+          <p>A Certified Financial Planner™ with a Ph.D. from Kansas State University, an MBA from Creighton, and a Finance degree from the University of Colorado at Colorado Springs, Travis brings rare depth across the disciplines that matter most to business-owning families. He integrates M&A advisory, financial therapy, estate planning, CFO and tax strategy, and investment management into a seamless, family-centered experience.</p>
+          <p>Travis serves on the boards of the Financial Therapy Association, the UNO Banking & Finance Advisory Board, and the UNO Economics Board. A committed Rotarian and advisor to the Healing Kadi Foundation, he spent three months volunteering in Uganda and remains active in humanitarian work across Africa.</p>
+          <p>Outside of work, Travis enjoys traveling, public speaking, and spending time with his wife and five children.</p>
+        `
+      },
+      member2: {
+        name: 'Team Member',
+        title: 'Director, Transaction Advisory',
+        body: `<p>Specialist in sell-side process management and buyer due diligence. Prior experience at a Big Four advisory practice and a regional private equity firm.</p>`
+      },
+      member3: {
+        name: 'Team Member',
+        title: 'Associate Director, Valuations',
+        body: `<p>Leads business valuation engagements and financial modeling. CFA charterholder with deep expertise in EBITDA normalization and market comparable analysis.</p>`
+      }
+    };
+
+    function openBio(id) {
+      const bio = bios[id];
+      if (!bio) return;
+      document.getElementById('modalName').textContent = bio.name;
+      document.getElementById('modalTitle').textContent = bio.title;
+      document.getElementById('modalBody').innerHTML = bio.body;
+      document.getElementById('bioModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBio() {
+      document.getElementById('bioModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function closeBioOnOverlay(e) {
+      if (e.target === document.getElementById('bioModal')) closeBio();
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeBio();
+    });
+  </script>
 
 </body>
 </html>
