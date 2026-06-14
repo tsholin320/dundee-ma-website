@@ -678,6 +678,178 @@
       line-height: 1.75;
     }
 
+    /* FLOATING CONTACT BUTTON */
+    .float-btn {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 150;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(26, 77, 46, 0.45);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 14px 22px;
+      border-radius: 40px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .float-btn:hover {
+      background: rgba(26, 77, 46, 0.75);
+      transform: translateY(-2px);
+    }
+
+    /* INTAKE MODAL */
+    .intake-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 300;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .intake-overlay.active { display: flex; }
+
+    .intake-modal {
+      background: var(--white);
+      max-width: 600px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      padding: 52px;
+      position: relative;
+    }
+
+    .intake-close {
+      position: absolute;
+      top: 20px; right: 24px;
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-muted);
+      line-height: 1;
+    }
+
+    .intake-close:hover { color: var(--text); }
+
+    .intake-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .intake-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .intake-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 10px;
+      line-height: 1.15;
+    }
+
+    .intake-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .intake-form { display: flex; flex-direction: column; gap: 16px; }
+
+    .intake-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .intake-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .intake-group label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .intake-group input,
+    .intake-group select,
+    .intake-group textarea {
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      outline: none;
+      border-radius: 0;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+
+    .intake-group input:focus,
+    .intake-group select:focus,
+    .intake-group textarea:focus { border-color: var(--green); }
+
+    .intake-group textarea { resize: vertical; min-height: 100px; }
+
+    .intake-submit {
+      background: var(--green);
+      color: var(--white);
+      border: none;
+      padding: 15px 32px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+      align-self: flex-start;
+      margin-top: 4px;
+    }
+
+    .intake-submit:hover { background: var(--green-mid); }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .float-btn span { display: none; }
+      .float-btn { padding: 16px; border-radius: 50%; }
+      .intake-modal { padding: 32px 24px; }
+      .intake-row { grid-template-columns: 1fr; }
+    }
+
     /* BIO MODAL */
     .bio-modal-overlay {
       display: none;
@@ -1156,15 +1328,15 @@
           <div class="team-title">CEO / Family Office Principal</div>
         </div>
         <div class="team-card">
-          <div class="team-photo" onclick="openBio('member2')">
-            <div style="color:var(--text-muted);font-size:13px;">[Photo]</div>
+          <div class="team-photo" onclick="openBio('mark')">
+            <img src="mark-headshot.jpeg" alt="Mark Hasebroock" style="width:100%;height:100%;object-fit:cover;display:block;"/>
             <div class="team-photo-hover">
-              <div class="team-photo-hover-text">Specialist in sell-side process management and buyer due diligence.</div>
+              <div class="team-photo-hover-text">Mark Hasebroock is one of Omaha's most recognized entrepreneurs and investors, bringing decades of deal experience and a founder-first perspective to Dundee M&A.</div>
               <button class="team-photo-hover-btn">Read Full Bio</button>
             </div>
           </div>
-          <div class="team-name">Team Member</div>
-          <div class="team-title">Director, Transaction Advisory</div>
+          <div class="team-name">Mark Hasebroock</div>
+          <div class="team-title">President</div>
         </div>
         <div class="team-card">
           <div class="team-photo" onclick="openBio('member3')">
@@ -1280,6 +1452,58 @@
     </div>
   </footer>
 
+  <!-- FLOATING CONTACT BUTTON -->
+  <button class="float-btn" id="floatBtn" onclick="openIntake()" aria-label="Contact Us">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+    <span>Contact Us</span>
+  </button>
+
+  <!-- INTAKE FORM MODAL -->
+  <div class="intake-overlay" id="intakeModal" onclick="closeIntakeOnOverlay(event)">
+    <div class="intake-modal">
+      <button class="intake-close" onclick="closeIntake()">&#times;</button>
+      <div class="intake-eyebrow">Get in Touch</div>
+      <h2 class="intake-title">Start a confidential conversation.</h2>
+      <p class="intake-sub">Every conversation is private. Tell us a little about your situation and we'll be in touch shortly.</p>
+      <div class="intake-form">
+        <div class="intake-row">
+          <div class="intake-group">
+            <label>First Name</label>
+            <input type="text" placeholder="John"/>
+          </div>
+          <div class="intake-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Smith"/>
+          </div>
+        </div>
+        <div class="intake-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="john@company.com"/>
+        </div>
+        <div class="intake-group">
+          <label>Company Name</label>
+          <input type="text" placeholder="Your Business"/>
+        </div>
+        <div class="intake-group">
+          <label>Annual Revenue (approximate)</label>
+          <select>
+            <option value="">Select a range</option>
+            <option>Under $2M</option>
+            <option>$2M – $10M</option>
+            <option>$10M – $25M</option>
+            <option>$25M – $100M</option>
+            <option>Over $100M</option>
+          </select>
+        </div>
+        <div class="intake-group">
+          <label>How can we help?</label>
+          <textarea placeholder="Tell us a bit about your situation..."></textarea>
+        </div>
+        <button class="intake-submit" onclick="closeIntake()">Send a Confidential Message</button>
+      </div>
+    </div>
+  </div>
+
   <!-- BIO MODAL -->
   <div class="bio-modal-overlay" id="bioModal" onclick="closeBioOnOverlay(event)">
     <div class="bio-modal">
@@ -1302,6 +1526,16 @@
           <p>Outside of work, Travis enjoys traveling, public speaking, and spending time with his wife and five children.</p>
         `
       },
+      mark: {
+        name: 'Mark Hasebroock',
+        title: 'President',
+        body: `
+          <p>Mark Hasebroock is President of Dundee M&A and one of Omaha's most recognized entrepreneurs and investors. As the founder and Managing Partner of Dundee Venture Capital, Mark has spent over 15 years backing and building companies across the Midwest, deploying more than $100 million across four funds and investing in over 50 companies.</p>
+          <p>Mark's entrepreneurial roots run deep. He co-founded GiftCertificates.com in the late 1990s and went on to co-found Hayneedle — a home furnishings retailer that raised capital from Sequoia Capital and Insight Venture Partners before exiting to Jet.com in 2016, which was subsequently acquired by Walmart. Earlier in his career, he served as a Managing Director at McCarthy Capital, giving him a rare combination of operator, founder, and institutional investment experience.</p>
+          <p>At Dundee M&A, Mark brings his decades of deal experience, deep Midwest networks, and founder-first perspective to help business owners navigate one of the most consequential decisions of their lives. He is a Kauffman Fellow and a board member of Children's Hospital & Medical Center in Omaha.</p>
+          <p>Mark is a University of Nebraska-Lincoln alumnus and a lifelong Omaha native. He and his wife Jane have eight children.</p>
+        `
+      },
       member2: {
         name: 'Team Member',
         title: 'Director, Transaction Advisory',
@@ -1313,6 +1547,20 @@
         body: `<p>Leads business valuation engagements and financial modeling. CFA charterholder with deep expertise in EBITDA normalization and market comparable analysis.</p>`
       }
     };
+
+    function openIntake() {
+      document.getElementById('intakeModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeIntake() {
+      document.getElementById('intakeModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function closeIntakeOnOverlay(e) {
+      if (e.target === document.getElementById('intakeModal')) closeIntake();
+    }
 
     function openBio(id) {
       const bio = bios[id];
@@ -1334,7 +1582,7 @@
     }
 
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeBio();
+      if (e.key === 'Escape') { closeBio(); closeIntake(); }
     });
   </script>
 
