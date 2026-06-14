@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dundee M&A — Mergers & Acquisitions Advisory</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #1A4D2E;
+      --green-dark: #122E1B;
+      --green-mid: #1F5C36;
+      --gold: #8B7D55;
+      --gold-light: #A89060;
+      --gold-pale: #D4C9A8;
+      --cream: #F8F5EF;
+      --cream-dark: #EDE8DC;
+      --white: #FFFFFF;
+      --text: #1A1A1A;
+      --text-mid: #444;
+      --text-muted: #777;
+      --border: rgba(139,125,85,0.18);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo img {
+      height: 38px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--green); }
+
+    .nav-cta {
+      background: var(--green) !important;
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 2px;
+      letter-spacing: 0.06em !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--green-mid) !important; color: var(--white) !important; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: var(--green-dark);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(139,125,85,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 40px 80px;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(48px, 7vw, 88px);
+      font-weight: 600;
+      line-height: 1.05;
+      color: var(--white);
+      max-width: 760px;
+      margin-bottom: 32px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.68);
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 52px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--white);
+      padding: 16px 36px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { background: var(--gold-light); }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.85);
+      padding: 16px 36px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold-light);
+      color: var(--gold-light);
+    }
+
+    /* STATS BAR */
+    .stats-bar {
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stats-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat-item {
+      padding: 44px 20px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 600;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* SECTIONS */
+    section { padding: 100px 0; }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(34px, 4vw, 52px);
+      font-weight: 600;
+      color: var(--green-dark);
+      line-height: 1.12;
+      margin-bottom: 20px;
+    }
+
+    .section-lead {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 560px;
+      line-height: 1.8;
+      margin-bottom: 60px;
+    }
+
+    /* ABOUT / INTRO */
+    .about { background: var(--white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-size: 16px;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .about-feature {
+      background: var(--cream);
+      border-left: 3px solid var(--gold);
+      padding: 28px 32px;
+      margin-top: 36px;
+    }
+
+    .about-feature p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-style: italic;
+      color: var(--green-dark);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .about-visual {
+      background: var(--green-dark);
+      padding: 56px 48px;
+      position: relative;
+    }
+
+    .about-visual::before {
+      content: '';
+      position: absolute;
+      top: 16px; left: 16px; right: -16px; bottom: -16px;
+      border: 1px solid var(--gold-pale);
+      z-index: -1;
+    }
+
+    .about-visual-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 32px;
+    }
+
+    .about-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .about-points li {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      color: rgba(255,255,255,0.75);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .about-points li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    /* SERVICES */
+    .services { background: var(--cream); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border);
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 48px 40px;
+      transition: background 0.2s;
+      position: relative;
+    }
+
+    .service-card:hover { background: var(--cream); }
+
+    .service-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 64px;
+      font-weight: 600;
+      color: var(--cream-dark);
+      line-height: 1;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .service-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 14px;
+    }
+
+    .service-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .service-link {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: gap 0.2s;
+    }
+
+    .service-link:hover { gap: 14px; }
+
+    .service-link::after { content: '→'; }
+
+    /* PROCESS */
+    .process { background: var(--white); }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 60px;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: var(--gold-pale);
+      z-index: 0;
+    }
+
+    .process-step {
+      padding: 0 24px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-dot {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 1px solid var(--gold-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    .step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 10px;
+    }
+
+    .step-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--green-dark); padding: 100px 0; }
+
+    .testimonials .section-title { color: var(--white); }
+
+    .testimonials .section-eyebrow { color: var(--gold-light); }
+
+    .testimonials .section-eyebrow::before { background: var(--gold-light); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .testimonial-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(139,125,85,0.2);
+      padding: 40px 36px;
+    }
+
+    .testimonial-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-style: italic;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .testimonial-quote::before {
+      content: '\201C';
+      font-size: 48px;
+      color: var(--gold);
+      display: block;
+      line-height: 0.8;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-author {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gold-light);
+      letter-spacing: 0.06em;
+    }
+
+    .testimonial-role {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 4px;
+    }
+
+    /* CASE STUDIES */
+    .cases { background: var(--cream); }
+
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .case-card {
+      background: var(--white);
+      border-top: 3px solid var(--gold-pale);
+      padding: 36px 32px;
+      transition: border-color 0.2s;
+    }
+
+    .case-card:hover { border-color: var(--gold); }
+
+    .case-tag {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .case-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .case-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    /* TEAM */
+    .team { background: var(--white); }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .team-card { }
+
+    .team-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .team-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 4px;
+    }
+
+    .team-title {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .team-bio {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    /* CONTACT */
+    .contact { background: var(--cream); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-info p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 36px;
+    }
+
+    .contact-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+
+    .contact-detail-item {
+      display: flex;
+      gap: 14px;
+      font-size: 14px;
+      color: var(--text-mid);
+    }
+
+    .contact-detail-label {
+      font-weight: 500;
+      color: var(--gold);
+      min-width: 60px;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding-top: 2px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: var(--text);
+      outline: none;
+      border-radius: 0;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--green);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 130px; }
+
+    .form-submit {
+      background: var(--green);
+      color: var(--white);
+      border: none;
+      padding: 16px 36px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+
+    .form-submit:hover { background: var(--green-mid); }
+
+    /* FOOTER */
+    footer {
+      background: var(--green-dark);
+      padding: 64px 0 36px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 36px;
+    }
+
+    .footer-logo img { height: 32px; margin-bottom: 16px; filter: brightness(0) invert(1); }
+
+    .footer-tagline {
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.75;
+      max-width: 300px;
+    }
+
+    .footer-col-title {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 18px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col ul a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul a:hover { color: var(--gold-light); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-legal a {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-legal a:hover { color: var(--gold-light); }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .services-grid, .testimonials-grid, .cases-grid, .team-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+      .process-steps::before { display: none; }
+      .footer-top { grid-template-columns: 1fr; gap: 36px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="dundee-logo.png" alt="Dundee M&A"/>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#cases">Transactions</a></li>
+        <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Mergers &amp; Acquisitions Advisory</div>
+      <h1>Your business is your <em>life's work.</em> Let's find it the right next chapter.</h1>
+      <p class="hero-sub">Dundee M&A guides business owners through every stage of a sale — from valuation to closing — with discretion, expertise, and results.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Start a Confidential Conversation</a>
+        <a href="#services" class="btn-outline">How We Work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-number">$2B+</div>
+        <div class="stat-label">Transaction Value Closed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">150+</div>
+        <div class="stat-label">Deals Completed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">20+</div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">95%</div>
+        <div class="stat-label">Client Satisfaction Rate</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="section-eyebrow">Who We Are</div>
+          <h2 class="section-title">Advisory built around you, not the transaction.</h2>
+          <p>Dundee M&A is a boutique mergers and acquisitions advisory firm serving business owners across the lower middle market. We bring institutional-quality deal experience to owners who deserve more than a cookie-cutter process.</p>
+          <p>We work with a select number of clients at any given time — so when you engage Dundee, you get our full attention, our full network, and our full commitment to getting you the outcome you deserve.</p>
+          <div class="about-feature">
+            <p>"We don't just find buyers. We find the right buyers — and we know the difference."</p>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="about-visual-title">What sets us apart</div>
+          <ul class="about-points">
+            <li>Boutique attention with broad market reach across buyers, private equity, and strategic acquirers</li>
+            <li>Senior-led engagements — your deal is never handed off to junior staff</li>
+            <li>Deep expertise across industries including manufacturing, services, and professional firms</li>
+            <li>Transparent, milestone-based process from first conversation to closing day</li>
+            <li>Confidential marketing that protects your employees, customers, and competitive position</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-inner">
+      <div class="section-eyebrow">What We Do</div>
+      <h2 class="section-title">Services designed for sellers.</h2>
+      <p class="section-lead">Every engagement is tailored to your goals, your timeline, and the unique value your business has built over the years.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-num">01</span>
+          <div class="service-title">Sell-Side Advisory</div>
+          <p class="service-desc">End-to-end representation for business owners ready to sell. We manage every aspect of your transaction — buyer outreach, negotiations, due diligence, and closing — so you can stay focused on running your business.</p>
+          <a href="#contact" class="service-link">Learn more</a>
+        </div>
+        <div class="service-card">
+          <span class="service-num">02</span>
+          <div class="service-title">Business Valuation</div>
+          <p class="service-desc">Understand what your business is truly worth before you go to market. Our independent valuations are grounded in current market data, comparable transactions, and a deep understanding of how buyers think.</p>
+          <a href="#contact" class="service-link">Learn more</a>
+        </div>
+        <div class="service-card">
+          <span class="service-num">03</span>
+          <div class="service-title">Strategic Consulting</div>
+          <p class="service-desc">Not ready to sell today? We help owners build toward a future transaction — identifying value drivers, addressing gaps, and positioning your business to command a premium when the time is right.</p>
+          <a href="#contact" class="service-link">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="section-inner">
+      <div class="section-eyebrow">How It Works</div>
+      <h2 class="section-title">A process built for clarity and confidence.</h2>
+      <p class="section-lead">Selling a business is one of the most significant decisions you'll ever make. We make sure you understand every step before you take it.</p>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-dot">1</div>
+          <div class="step-title">Discovery</div>
+          <p class="step-desc">A confidential conversation to understand your goals, timeline, and what a successful outcome looks like for you.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-dot">2</div>
+          <div class="step-title">Valuation</div>
+          <p class="step-desc">We analyze your financials and market position to establish a credible, defensible value range for your business.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-dot">3</div>
+          <div class="step-title">Go to Market</div>
+          <p class="step-desc">Targeted, confidential outreach to qualified buyers — strategic acquirers, private equity, and family offices.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-dot">4</div>
+          <div class="step-title">Close</div>
+          <p class="step-desc">We manage negotiations and due diligence through to a successful, fully documented closing on your behalf.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-inner">
+      <div class="section-eyebrow">Client Voices</div>
+      <h2 class="section-title">Owners who've been where you are.</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">Dundee made a process I'd been dreading feel manageable. They handled everything and got us a price well above what I thought we'd see.</div>
+          <div class="testimonial-author">James R.</div>
+          <div class="testimonial-role">Founder &amp; Former CEO, Manufacturing — $18M Transaction</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">The team was with us every step of the way. Not once did I feel like we were just another deal on someone's list.</div>
+          <div class="testimonial-author">Linda M.</div>
+          <div class="testimonial-role">Owner, Professional Services Firm — $9M Transaction</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">Their buyer network is impressive. We had four qualified offers within six weeks of going to market. Outstanding result.</div>
+          <div class="testimonial-author">Thomas K.</div>
+          <div class="testimonial-role">Co-Founder, Distribution Company — $31M Transaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section class="cases" id="cases">
+    <div class="section-inner">
+      <div class="section-eyebrow">Select Transactions</div>
+      <h2 class="section-title">A track record of results.</h2>
+      <p class="section-lead">Representative transactions across industries. Details anonymized to protect client confidentiality.</p>
+      <div class="cases-grid">
+        <div class="case-card">
+          <div class="case-tag">Manufacturing · Sell-Side</div>
+          <div class="case-title">Precision components manufacturer sold to strategic acquirer</div>
+          <p class="case-desc">Represented a 40-year-old family business in the sale to a national roll-up platform. Achieved a 7.2x EBITDA multiple with favorable transition terms for the founding family.</p>
+        </div>
+        <div class="case-card">
+          <div class="case-tag">Professional Services · Sell-Side</div>
+          <div class="case-title">Regional accounting firm acquired by private equity-backed platform</div>
+          <p class="case-desc">Managed a competitive process resulting in three letters of intent. Closed at a significant premium to initial market estimate, with the founder retained as managing partner.</p>
+        </div>
+        <div class="case-card">
+          <div class="case-tag">Distribution · Sell-Side</div>
+          <div class="case-title">Specialty distributor sale to strategic buyer</div>
+          <p class="case-desc">Introduced the business to an out-of-state strategic buyer not previously on the owner's radar. The buyer's synergies drove an above-market valuation and a clean, 90-day close.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team" id="team">
+    <div class="section-inner">
+      <div class="section-eyebrow">Our Team</div>
+      <h2 class="section-title">Senior advisors. Every engagement.</h2>
+      <p class="section-lead">Your deal is led by experienced practitioners — not handed off. Add your team members below to personalize this section.</p>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-photo">[Photo]</div>
+          <div class="team-name">Your Name Here</div>
+          <div class="team-title">Managing Director</div>
+          <p class="team-bio">20+ years of M&A advisory experience across the lower middle market. Background in investment banking and corporate development. Led 100+ transactions to close.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-photo">[Photo]</div>
+          <div class="team-name">Team Member</div>
+          <div class="team-title">Director, Transaction Advisory</div>
+          <p class="team-bio">Specialist in sell-side process management and buyer due diligence. Prior experience at a Big Four advisory practice and a regional private equity firm.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-photo">[Photo]</div>
+          <div class="team-name">Team Member</div>
+          <div class="team-title">Associate Director, Valuations</div>
+          <p class="team-bio">Leads business valuation engagements and financial modeling. CFA charterholder with deep expertise in EBITDA normalization and market comparable analysis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="section-eyebrow">Get in Touch</div>
+          <h2 class="section-title">Every conversation is confidential.</h2>
+          <p>Whether you're actively considering a sale or just starting to think about your options, we're happy to have a no-pressure conversation about what's possible for your business.</p>
+          <div class="contact-detail">
+            <div class="contact-detail-item">
+              <span class="contact-detail-label">Email</span>
+              <span>info@dundeema.com</span>
+            </div>
+            <div class="contact-detail-item">
+              <span class="contact-detail-label">Phone</span>
+              <span>(555) 000-0000</span>
+            </div>
+            <div class="contact-detail-item">
+              <span class="contact-detail-label">Office</span>
+              <span>123 Main Street, Suite 400<br/>Your City, ST 00000</span>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" placeholder="John"/>
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" placeholder="Smith"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="john@company.com"/>
+          </div>
+          <div class="form-group">
+            <label for="company">Company Name</label>
+            <input type="text" id="company" placeholder="Your Business"/>
+          </div>
+          <div class="form-group">
+            <label for="revenue">Annual Revenue (approximate)</label>
+            <select id="revenue">
+              <option value="">Select a range</option>
+              <option>Under $2M</option>
+              <option>$2M – $10M</option>
+              <option>$10M – $25M</option>
+              <option>$25M – $100M</option>
+              <option>Over $100M</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">How can we help?</label>
+            <textarea id="message" placeholder="Tell us a bit about your situation and what you're considering..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send a Confidential Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo"><img src="dundee-logo.png" alt="Dundee M&A"/></div>
+          <p class="footer-tagline">Boutique M&A advisory for business owners navigating one of the most important decisions of their lives.</p>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Services</div>
+          <ul>
+            <li><a href="#services">Sell-Side Advisory</a></li>
+            <li><a href="#services">Business Valuation</a></li>
+            <li><a href="#services">Strategic Consulting</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Company</div>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#cases">Transactions</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 Dundee M&A. All rights reserved.</div>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
