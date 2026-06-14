@@ -589,7 +589,7 @@
 
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 40px;
     }
 
@@ -1339,15 +1339,26 @@
           <div class="team-title">President</div>
         </div>
         <div class="team-card">
-          <div class="team-photo" onclick="openBio('member3')">
-            <div style="color:var(--text-muted);font-size:13px;">[Photo]</div>
+          <div class="team-photo" onclick="openBio('danny')">
+            <img src="danny-headshot.webp" alt="Danny Woodhead" style="width:100%;height:100%;object-fit:cover;display:block;"/>
             <div class="team-photo-hover">
-              <div class="team-photo-hover-text">Leads business valuation engagements and financial modeling.</div>
+              <div class="team-photo-hover-text">A 10-year NFL veteran and College Football Hall of Famer, Danny brings the same relentless work ethic and fierce negotiating edge to the deal table that defined his playing career.</div>
               <button class="team-photo-hover-btn">Read Full Bio</button>
             </div>
           </div>
-          <div class="team-name">Team Member</div>
-          <div class="team-title">Associate Director, Valuations</div>
+          <div class="team-name">Danny Woodhead</div>
+          <div class="team-title">Managing Partner</div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo" onclick="openBio('paul')">
+            <img src="paul-headshot.webp" alt="Paul Lanphier" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+            <div class="team-photo-hover">
+              <div class="team-photo-hover-text">Having personally navigated multiple business exits, Paul brings firsthand knowledge of what business owners experience on both sides of a transaction.</div>
+              <button class="team-photo-hover-btn">Read Full Bio</button>
+            </div>
+          </div>
+          <div class="team-name">Paul Lanphier</div>
+          <div class="team-title">Managing Partner</div>
         </div>
       </div>
     </div>
@@ -1536,16 +1547,25 @@
           <p>Mark is a University of Nebraska-Lincoln alumnus and a lifelong Omaha native. He and his wife Jane have eight children.</p>
         `
       },
-      member2: {
-        name: 'Team Member',
-        title: 'Director, Transaction Advisory',
-        body: `<p>Specialist in sell-side process management and buyer due diligence. Prior experience at a Big Four advisory practice and a regional private equity firm.</p>`
+      danny: {
+        name: 'Danny Woodhead',
+        title: 'Managing Partner',
+        body: `
+          <p>Danny Woodhead is a Managing Partner at Dundee M&A and one of Nebraska's most beloved athletes turned business leaders. A North Platte native, Danny went undrafted out of Division II Chadron State before carving out a celebrated 10-year NFL career with the Jets, Patriots, Chargers, and Ravens — appearing in Super Bowl XLVI and retiring with over 4,900 all-purpose yards and 32 touchdowns. He was inducted into the College Football Hall of Fame in 2024.</p>
+          <p>The same relentless work ethic and team-first mentality that defined his playing days now drives his work in business. Known as a fierce negotiator — Danny personally stepped in front of his own agent to negotiate his NFL contracts — he brings that same sharp, direct approach to the deal table at Dundee M&A. With a background in strategic consulting, leadership development, and performance coaching, Danny is a trusted advocate for business owners navigating the most important transaction of their lives.</p>
+          <p>Today he is a sought-after speaker, consultant, and mentor whose impact extends well beyond the field.</p>
+        `
       },
-      member3: {
-        name: 'Team Member',
-        title: 'Associate Director, Valuations',
-        body: `<p>Leads business valuation engagements and financial modeling. CFA charterholder with deep expertise in EBITDA normalization and market comparable analysis.</p>`
-      }
+      paul: {
+        name: 'Paul Lanphier',
+        title: 'Managing Partner',
+        body: `
+          <p>Paul Lanphier is a Managing Partner at Dundee M&A with a background spanning leadership development, strategic planning, sales, and community impact. Having personally navigated multiple business exits, Paul brings firsthand knowledge of what business owners experience on both sides of a transaction — making him a uniquely empathetic and effective advisor.</p>
+          <p>His experience working across the business, wellness, and nonprofit sectors — including leadership roles at Hope Center for Kids, ABIDE, Thrive Homes, and Total Wellness — gives him a unique perspective on what it takes to build something meaningful and sustainable.</p>
+          <p>At Dundee M&A, Paul's strengths in relationship-building, strategic planning, and hard-won transaction experience make him a trusted guide for business owners ready to take their next chapter seriously.</p>
+          <p>Paul holds a degree in Business from Bellevue University and is a lifelong Omaha community builder.</p>
+        `
+      },
     };
 
     function openIntake() {
