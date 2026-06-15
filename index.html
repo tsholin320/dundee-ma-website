@@ -589,8 +589,9 @@
 
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 40px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 32px;
+      row-gap: 48px;
     }
 
     .team-card { position: relative; }
@@ -1313,8 +1314,8 @@
   <section class="team" id="team">
     <div class="section-inner">
       <div class="section-eyebrow">Our Team</div>
-      <h2 class="section-title">A full team behind every deal.</h2>
-      <p class="section-lead">Every engagement is led by a senior advisor who stays accountable from first conversation to closing day — supported by a dedicated team of advisors, project managers, and analysts who make sure nothing falls through the cracks.</p>
+      <h2 class="section-title">Senior advisors. Every engagement.</h2>
+      <p class="section-lead">Your deal is led by experienced practitioners — not handed off. They work alongside a dedicated team of advisors, project managers, and analysts to make sure every detail is executed and every dollar of value is captured at the table.</p>
       <div class="team-grid">
         <div class="team-card">
           <div class="team-photo" onclick="openBio('travis')">
@@ -1325,7 +1326,7 @@
             </div>
           </div>
           <div class="team-name">Travis Sholin</div>
-          <div class="team-title">CEO / Family Office Principal</div>
+          <div class="team-title">CEO</div>
         </div>
         <div class="team-card">
           <div class="team-photo" onclick="openBio('mark')">
@@ -1360,7 +1361,118 @@
           <div class="team-name">Paul Lanphier</div>
           <div class="team-title">Managing Partner</div>
         </div>
-      </div>
+        <div class="team-card">
+          <div class="team-photo" onclick="openBio('kobe')" style="background:var(--cream);">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,#1A4D2E 0%,#2E7D42 100%);display:flex;align-items:center;justify-content:center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <div class="team-photo-hover">
+              <div class="team-photo-hover-text">Kobe keeps every deal moving — managing timelines, coordinating teams, and making sure nothing falls through the cracks from kickoff to close.</div>
+              <button class="team-photo-hover-btn">Read Full Bio</button>
+            </div>
+          </div>
+          <div class="team-name">Kobe Ballard</div>
+          <div class="team-title">Project Manager</div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo" onclick="openBio('nancy')">
+            <img src="nancy-headshot.jpg" alt="Nancy Laug-Sholin" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+            <div class="team-photo-hover">
+              <div class="team-photo-hover-text">With over 40 years in financial services, Nancy brings unmatched depth of experience and a lifelong commitment to helping clients build and preserve wealth.</div>
+              <button class="team-photo-hover-btn">Read Full Bio</button>
+            </div>
+          </div>
+          <div class="team-name">Nancy Laug-Sholin</div>
+          <div class="team-title">Partner</div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo" onclick="openBio('justin')">
+            <img src="justin-headshot.jpg" alt="Justin Sholin" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+            <div class="team-photo-hover">
+              <div class="team-photo-hover-text">A CFP® and investment analyst with deep expertise in wealth management, Justin brings rigorous research and a client-first approach to every engagement.</div>
+              <button class="team-photo-hover-btn">Read Full Bio</button>
+            </div>
+          </div>
+          <div class="team-name">Justin Sholin</div>
+          <div class="team-title">Partner</div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo" onclick="openBio('hope')">
+            <img src="hope-headshot.jpg" alt="Hope Dogbevia" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+            <div class="team-photo-hover">
+              <div class="team-photo-hover-text">Hope brings over a decade of accounting and financial analysis experience, with deep expertise in small business valuation, bookkeeping, and transaction finance.</div>
+              <button class="team-photo-hover-btn">Read Full Bio</button>
+            </div>
+          </div>
+          <div class="team-name">Hope Dogbevia</div>
+          <div class="team-title">Director, Transaction Finance</div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo" onclick="openBio('lana')">
+            <img src="lana-headshot.jpg" alt="Lana Trofholz" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+            <div class="team-photo-hover">
+              <div class="team-photo-hover-text">A former college athlete and 15-year accounting veteran, Lana specializes in advising high-net-worth families, entrepreneurs, and business enterprises.</div>
+              <button class="team-photo-hover-btn">Read Full Bio</button>
+            </div>
+          </div>
+          <div class="team-name">Lana Trofholz</div>
+          <div class="team-title">Deal Advisor</div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo" onclick="openBio('marcus')">
+            <img src="marcus-headshot.jpg" alt="Marcus Wagstaff" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+            <div class="team-photo-hover">
+              <div class="team-photo-hover-text">Marcus brings a decade of experience across Fortune 500 companies, family office wealth management, and small business — paired with a passion for financial literacy and client empowerment.</div>
+              <button class="team-photo-hover-btn">Read Full Bio</button>
+            </div>
+          </div>
+          <div class="team-name">Marcus Wagstaff</div>
+          <div class="team-title">Deal Advisor</div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo" onclick="openBio('benjamin')">
+            <img src="benjamin-headshot.jpg" alt="Benjamin Sande" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+            <div class="team-photo-hover">
+              <div class="team-photo-hover-text">Benjamin brings over a decade of experience in wealth management, compliance, and client services — with a reputation for accuracy, leadership, and putting clients first.</div>
+              <button class="team-photo-hover-btn">Read Full Bio</button>
+            </div>
+          </div>
+          <div class="team-name">Benjamin Sande</div>
+          <div class="team-title">Client Relations Associate</div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo" onclick="openBio('deleth')">
+            <img src="deleth-headshot.jpg" alt="Deleth Weaver" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+            <div class="team-photo-hover">
+              <div class="team-photo-hover-text">An Omaha native with over 10 years of accounting experience, Deleth specializes in individual and business tax returns and bookkeeping for business owners.</div>
+              <button class="team-photo-hover-btn">Read Full Bio</button>
+            </div>
+          </div>
+          <div class="team-name">Deleth Weaver</div>
+          <div class="team-title">Accounting Associate</div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo" onclick="openBio('ashley')">
+            <img src="ashley-headshot.jpg" alt="Ashley Chowdhury" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+            <div class="team-photo-hover">
+              <div class="team-photo-hover-text">Ashley specializes in bookkeeping for business owners, with expertise in accounts receivable and payable for complex, high-volume operations.</div>
+              <button class="team-photo-hover-btn">Read Full Bio</button>
+            </div>
+          </div>
+          <div class="team-name">Ashley Chowdhury</div>
+          <div class="team-title">Accounting Associate</div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo" onclick="openBio('brianna')">
+            <img src="brianna-headshot.jpg" alt="Brianna Ferraro" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+            <div class="team-photo-hover">
+              <div class="team-photo-hover-text">Brianna is the first voice you hear at Dundee M&A — a dedicated client services specialist and the liaison for all client needs.</div>
+              <button class="team-photo-hover-btn">Read Full Bio</button>
+            </div>
+          </div>
+          <div class="team-name">Brianna Ferraro</div>
+          <div class="team-title">Client Services Specialist</div>
+        </div>
     </div>
   </section>
 
@@ -1547,8 +1659,96 @@
           <p>Mark is a University of Nebraska-Lincoln alumnus and a lifelong Omaha native. He and his wife Jane have eight children.</p>
         `
       },
+      kobe: {
+        name: 'Kobe Ballard',
+        title: 'Project Manager',
+        body: `
+          <p>Kobe Ballard serves as Project Manager at Dundee M&A, where he plays a critical role in keeping every engagement on track from kickoff to close. He is the connective tissue between senior advisors, clients, buyers, attorneys, and accountants — ensuring that timelines are met, documents are in order, and communication never falls through the cracks.</p>
+          <p>Detail-oriented and relentlessly organized, Kobe brings a process-driven approach to some of the most complex and high-stakes transactions in the lower middle market. His ability to manage multiple workstreams simultaneously allows the senior advisory team to stay focused on strategy and negotiations while every operational detail is handled with precision.</p>
+          <p>Kobe is based in Omaha and is passionate about building systems that help business owners experience a smoother, more transparent transaction process.</p>
+        `
+      },
       danny: {
         name: 'Danny Woodhead',
+        title: 'Managing Partner',
+        body: `
+          <p>Danny Woodhead is a Managing Partner at Dundee M&A and one of Nebraska's most beloved athletes turned business leaders. A North Platte native, Danny went undrafted out of Division II Chadron State before carving out a celebrated 10-year NFL career with the Jets, Patriots, Chargers, and Ravens — appearing in Super Bowl XLVI and retiring with over 4,900 all-purpose yards and 32 touchdowns. He was inducted into the College Football Hall of Fame in 2024.</p>
+          <p>The same relentless work ethic and team-first mentality that defined his playing days now drives his work in business. Known as a fierce negotiator — Danny personally stepped in front of his own agent to negotiate his NFL contracts — he brings that same sharp, direct approach to the deal table at Dundee M&A. With a background in strategic consulting, leadership development, and performance coaching, Danny is a trusted advocate for business owners navigating the most important transaction of their lives.</p>
+          <p>Today he is a sought-after speaker, consultant, and mentor whose impact extends well beyond the field.</p>
+        `
+      },
+      nancy: {
+        name: 'Nancy Laug-Sholin CLU, CHFC',
+        title: 'Partner',
+        body: `
+          <p>Nancy Laug-Sholin is a Partner at Dundee M&A with over 40 years of experience in financial services. She graduated from Doane College in 1977 with a Bachelor's degree in Education and a minor in Accounting, and earned her Master's in Education from the University of Nebraska in 1983.</p>
+          <p>Nancy began her financial planning career in 1983 and transitioned full-time in 1985 — becoming the first woman in 100 years of business to receive Rookie of the Year with Central Life. Her degrees from American College include the CLU (Certified Life Underwriter) and ChFC (Chartered Financial Consultant) designations. She holds her Series 7, Series 66, and Insurance licenses.</p>
+          <p>Nancy specializes in wealth management for business owners, retirees, and individuals, with a focus on long-term goals and estate planning. She is proud to serve as a Business Ethics Alliance Trustee.</p>
+        `
+      },
+      justin: {
+        name: 'Justin Sholin CFP®',
+        title: 'Partner',
+        body: `
+          <p>Justin Sholin is a Partner at Dundee M&A and a Certified Financial Planner™ with over 15 years of experience in wealth advisory and investment analysis. He graduated from the University of Nebraska–Lincoln with a bachelor's degree in Business Finance and holds his Series 7, Series 66, and Life Insurance licenses.</p>
+          <p>Justin specializes in working with existing clients, young professionals, retirees, and retirement plans. He serves on the investment committee, playing a critical role in selecting and researching investment strategies for clients.</p>
+        `
+      },
+      hope: {
+        name: 'Hope Dogbevia EA, MBA, CFP®',
+        title: 'Director, Transaction Finance',
+        body: `
+          <p>Hope Dogbevia is Director of Transaction Finance at Dundee M&A, bringing over a decade of accounting experience working with small businesses, startups, and individuals. He is skilled in small business accounting, bookkeeping, payroll, valuation, and budgeting.</p>
+          <p>He earned his MBA with a concentration in Finance from Creighton University and his bachelor's degree in Professional Accounting and Agribusiness Management from Hastings College. Hope is passionate about helping entrepreneurs achieve financial clarity and freedom.</p>
+          <p>He serves on the advisory board of Jubilee Church in Omaha and as a board member of HIS HANDS on EARTH, a nonprofit focused on children's education.</p>
+        `
+      },
+      lana: {
+        name: 'Lana Trofholz',
+        title: 'Deal Advisor',
+        body: `
+          <p>Lana Trofholz is a Senior Advisor at Dundee M&A with 15 years of accounting and wealth advisory experience. She earned her bachelor's degree in Accounting from Nebraska Wesleyan and holds her Series 7, Series 66, and Life, Accident, and Health licenses.</p>
+          <p>Lana specializes in advising high-net-worth families, entrepreneurs, and business enterprises. A former college basketball player, she brings the same discipline and competitive drive to her client work. She serves as a board member for the St. Wenceslaus Home and School and the Sammy Strong Foundation.</p>
+        `
+      },
+      marcus: {
+        name: 'Marcus Wagstaff',
+        title: 'Deal Advisor',
+        body: `
+          <p>Marcus Wagstaff is a Deal Advisor at Dundee M&A and an Omaha native with a decade of experience spanning small businesses, Family Office Wealth Management, and Fortune 500 companies. He earned his undergraduate degree in Finance from Creighton University.</p>
+          <p>His diverse background in financial management, combined with six years as a high school educator, gives him a unique ability to bridge business expertise and financial education. Marcus is committed to financial literacy and putting client needs first in every engagement.</p>
+          <p>Beyond his professional career, Marcus is a devoted husband and father of three. In his spare time, he enjoys golfing, photography, and coaching youth sports.</p>
+        `
+      },
+      benjamin: {
+        name: 'Benjamin Sande',
+        title: 'Client Relations Associate',
+        body: `
+          <p>Benjamin Sande is a Client Relations Associate at Dundee M&A, bringing over a decade of experience across wealth management, payroll, compliance, and contract analysis. He has held prior roles at TD Ameritrade, NEI Global Relocation, Fiserv, and Lincoln Financial Group, and has earned multiple awards for performance and collaboration. He holds Series 7, 63, and Nebraska Life & Annuities licenses.</p>
+          <p>Passionate about financial literacy and long-term planning, Benjamin also volunteers as Board Secretary for the Healing Kadi Foundation, advancing healthcare initiatives in South Sudan. He holds a Bachelor of Arts in Social Work from Wartburg College and has served in leadership roles with Kiwanis International and InterNations.</p>
+        `
+      },
+      deleth: {
+        name: 'Deleth Weaver',
+        title: 'Accounting Associate',
+        body: `
+          <p>Deleth Weaver is an Accounting Associate at Dundee M&A and an Omaha native with over 10 years of experience in the accounting field. She specializes in filing individual and business tax returns and bookkeeping for business owners. She holds an AAS in Accounting and is currently continuing her education at Bellevue University.</p>
+        `
+      },
+      ashley: {
+        name: 'Ashley Chowdhury',
+        title: 'Accounting Associate',
+        body: `
+          <p>Ashley Chowdhury is an Accounting Associate at Dundee M&A. She graduated from the University of Nebraska at Omaha with a bachelor's degree in Business Administration. Ashley specializes in bookkeeping for business owners, with particular expertise in organizing accounts receivable and payable for complex operations.</p>
+        `
+      },
+      brianna: {
+        name: 'Brianna Ferraro',
+        title: 'Client Services Specialist',
+        body: `
+          <p>Brianna Ferraro is the Client Services Specialist at Dundee M&A — the first point of contact for clients and the liaison for all client needs. Dedicated, responsive, and detail-oriented, Brianna ensures every client interaction reflects the firm's commitment to exceptional service.</p>
+        `
+      },
         title: 'Managing Partner',
         body: `
           <p>Danny Woodhead is a Managing Partner at Dundee M&A and one of Nebraska's most beloved athletes turned business leaders. A North Platte native, Danny went undrafted out of Division II Chadron State before carving out a celebrated 10-year NFL career with the Jets, Patriots, Chargers, and Ravens — appearing in Super Bowl XLVI and retiring with over 4,900 all-purpose yards and 32 touchdowns. He was inducted into the College Football Hall of Fame in 2024.</p>
