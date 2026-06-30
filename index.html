@@ -946,7 +946,7 @@
         <div class="process-step">
           <div class="step-dot">5</div>
           <div class="step-title">Legacy</div>
-          <p class="step-desc">The closing isn't the finish line — it's the starting gun. Now the real work begins: family wealth planning, philanthropy, next-generation stewardship, and building a legacy that outlasts the transaction.</p>
+          <p class="step-desc">The work isn't over — it's just beginning. Family wealth, philanthropy, and next-gen planning start here.</p>
         </div>
       </div>
     </div>
@@ -1016,7 +1016,7 @@
             </div>
           </div>
           <div class="team-name">Travis Sholin</div>
-          <div class="team-title">CEO / Senior Advisor</div>
+          <div class="team-title">Senior Advisor / Partner</div>
         </div>
         <div class="team-card">
           <div class="team-photo" onclick="openBio('mark')">
@@ -1027,7 +1027,7 @@
             </div>
           </div>
           <div class="team-name">Mark Hasebroock</div>
-          <div class="team-title">President / Senior Advisor</div>
+          <div class="team-title">Senior Advisor / Partner</div>
         </div>
         <div class="team-card">
           <div class="team-photo" onclick="openBio('danny')">
@@ -1038,7 +1038,7 @@
             </div>
           </div>
           <div class="team-name">Danny Woodhead</div>
-          <div class="team-title">Managing Partner / Senior Advisor</div>
+          <div class="team-title">Senior Advisor / Partner</div>
         </div>
         <div class="team-card">
           <div class="team-photo" onclick="openBio('paul')">
@@ -1049,7 +1049,7 @@
             </div>
           </div>
           <div class="team-name">Paul Lanphier</div>
-          <div class="team-title">Managing Partner / Senior Advisor</div>
+          <div class="team-title">Senior Advisor / Partner</div>
         </div>
         <div class="team-card">
           <div class="team-photo" onclick="openBio('nancy')">
@@ -1180,10 +1180,6 @@
               <span>info@dundeema.com</span>
             </div>
             <div class="contact-detail-item">
-              <span class="contact-detail-label">Phone</span>
-              <span>(555) 000-0000</span>
-            </div>
-            <div class="contact-detail-item">
               <span class="contact-detail-label">Office</span>
               <span>9802 Nicholas St, Suite 315B<br/>Omaha, NE 68114</span>
             </div>
@@ -1203,6 +1199,10 @@
           <div class="form-group">
             <label for="email">Email Address</label>
             <input type="email" id="email" placeholder="john@company.com"/>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="(402) 000-0000"/>
           </div>
           <div class="form-group">
             <label for="company">Company Name</label>
@@ -1291,6 +1291,10 @@
           <input type="email" placeholder="john@company.com"/>
         </div>
         <div class="intake-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="(402) 000-0000"/>
+        </div>
+        <div class="intake-group">
           <label>Company Name</label>
           <input type="text" placeholder="Your Business"/>
         </div>
@@ -1327,17 +1331,17 @@
     const bios = {
       travis: {
         name: 'Travis Sholin',
-        title: 'CEO / Senior Advisor',
+        title: 'Senior Advisor / Partner',
         body: `
           <p>Travis Sholin is the CEO of the Dundee family of companies — including Dundee M&A, Dundee Family Office, Dundee Wealth Management, and Dundee Accounting. His life's work is guiding families through the full circle of wealth: from business exit and transaction advisory to legacy planning and next-generation stewardship.</p>
-          <p>A Certified Financial Planner™ with a Ph.D. from Kansas State University, an MBA from Creighton, and a Finance degree from the University of Colorado at Colorado Springs, Travis brings rare depth across the disciplines that matter most to business-owning families. He integrates M&A advisory, financial therapy, estate planning, CFO and tax strategy, and investment management into a seamless, family-centered experience.</p>
+          <p>A Certified Financial Planner™ with a Ph.D. from Kansas State University, an MBA from Creighton, and a Finance degree from the University of Colorado at Colorado Springs, Travis brings rare depth across the disciplines that matter most to business-owning families. He integrates M&A advisory, financial psychology, estate planning, tax strategy, and investment management into a seamless, family-centered experience.</p>
           <p>Travis serves on the boards of the Financial Therapy Association, the UNO Banking & Finance Advisory Board, and the UNO Economics Board. A committed Rotarian and advisor to the Healing Kadi Foundation, he spent three months volunteering in Uganda and remains active in humanitarian work across Africa.</p>
           <p>Outside of work, Travis enjoys traveling, public speaking, and spending time with his wife and five children.</p>
         `
       },
       mark: {
         name: 'Mark Hasebroock',
-        title: 'President / Senior Advisor',
+        title: 'Senior Advisor / Partner',
         body: `
           <p>Mark Hasebroock is President of Dundee M&A and one of Omaha's most recognized entrepreneurs and investors. As the founder and Managing Partner of Dundee Venture Capital, Mark has spent over 15 years backing and building companies across the Midwest, deploying more than $100 million across four funds and investing in over 50 companies.</p>
           <p>Mark's entrepreneurial roots run deep. He co-founded GiftCertificates.com in the late 1990s and went on to co-found Hayneedle — a home furnishings retailer that raised capital from Sequoia Capital and Insight Venture Partners before exiting to Jet.com in 2016, which was subsequently acquired by Walmart. Earlier in his career, he served as a Managing Director at McCarthy Capital, giving him a rare combination of operator, founder, and institutional investment experience.</p>
@@ -1347,7 +1351,7 @@
       },
       danny: {
         name: 'Danny Woodhead',
-        title: 'Managing Partner / Senior Advisor',
+        title: 'Senior Advisor / Partner',
         body: `
           <p>Danny Woodhead is a Managing Partner at Dundee M&A and one of Nebraska's most beloved athletes turned business leaders. A North Platte native, Danny went undrafted out of Division II Chadron State before carving out a celebrated 10-year NFL career with the Jets, Patriots, Chargers, and Ravens — appearing in Super Bowl XLVI and retiring with over 4,900 all-purpose yards and 32 touchdowns. He was inducted into the College Football Hall of Fame in 2024.</p>
           <p>The same relentless work ethic and team-first mentality that defined his playing days now drives his work in business. Known as a fierce negotiator — Danny personally stepped in front of his own agent to negotiate his NFL contracts — he brings that same sharp, direct approach to the deal table at Dundee M&A. With a background in strategic consulting, leadership development, and performance coaching, Danny is a trusted advocate for business owners navigating the most important transaction of their lives.</p>
@@ -1356,7 +1360,7 @@
       },
       paul: {
         name: 'Paul Lanphier',
-        title: 'Managing Partner / Senior Advisor',
+        title: 'Senior Advisor / Partner',
         body: `
           <p>Paul Lanphier is a Managing Partner at Dundee M&A with a background spanning leadership development, strategic planning, sales, and community impact. Having personally navigated multiple business exits, Paul brings firsthand knowledge of what business owners experience on both sides of a transaction — making him a uniquely empathetic and effective advisor.</p>
           <p>His experience working across the business, wellness, and nonprofit sectors — including leadership roles at Hope Center for Kids, ABIDE, Thrive Homes, and Total Wellness — gives him a unique perspective on what it takes to build something meaningful and sustainable.</p>
