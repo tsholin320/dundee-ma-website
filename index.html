@@ -247,7 +247,7 @@
     .nav-dropdown-menu {
       display: none;
       position: absolute;
-      top: calc(100% + 16px);
+      top: 100%;
       left: 50%;
       transform: translateX(-50%);
       background: var(--white);
@@ -255,6 +255,16 @@
       min-width: 220px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.08);
       z-index: 200;
+      padding-top: 16px;
+    }
+
+    .nav-dropdown-menu::before {
+      content: '';
+      position: absolute;
+      top: -16px;
+      left: 0;
+      right: 0;
+      height: 16px;
     }
 
     .nav-dropdown:hover .nav-dropdown-menu { display: block; }
