@@ -970,17 +970,22 @@
     }
 
     .bio-modal-close {
-      position: absolute;
-      top: 20px; right: 24px;
-      font-size: 24px;
-      background: none;
+      position: sticky;
+      top: 0;
+      float: right;
+      margin-right: -20px;
+      margin-bottom: -40px;
+      font-size: 28px;
+      background: transparent;
       border: none;
       cursor: pointer;
-      color: var(--text-muted);
+      color: rgba(0,0,0,0.25);
       line-height: 1;
+      z-index: 10;
+      padding: 4px 8px;
     }
 
-    .bio-modal-close:hover { color: var(--text); }
+    .bio-modal-close:hover { color: rgba(0,0,0,0.6); }
     .bio-modal-name { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; color: var(--green-dark); margin-bottom: 4px; }
     .bio-modal-title { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; }
     .bio-modal-body { font-size: 15px; color: var(--text-mid); line-height: 1.85; }
@@ -1657,7 +1662,7 @@
         name: 'Travis Sholin',
         title: 'Senior Advisor / Partner',
         body: `
-          <p>Travis Sholin is the CEO of the Dundee family of companies — including Dundee M&A, Dundee Family Office, Dundee Wealth Management, and Dundee Accounting. His life's work is guiding families through the full circle of wealth: from business exit and transaction advisory to legacy planning and next-generation stewardship.</p>
+          <p>Travis Sholin is a Senior Advisor and Partner at Dundee M&A and CEO of the Dundee family of companies — including Dundee M&A, Dundee Family Office, Dundee Wealth Management, and Dundee Accounting. His life's work is guiding families through the full circle of wealth: from business exit and transaction advisory to legacy planning and next-generation stewardship.</p>
           <p>A Certified Financial Planner™ with a Ph.D. from Kansas State University, an MBA from Creighton, and a Finance degree from the University of Colorado at Colorado Springs, Travis brings rare depth across the disciplines that matter most to business-owning families. He integrates M&A advisory, financial psychology, estate planning, tax strategy, and investment management into a seamless, family-centered experience.</p>
           <p>Travis serves on the boards of the Financial Therapy Association, the UNO Banking & Finance Advisory Board, and the UNO Economics Board. A committed Rotarian and advisor to the Healing Kadi Foundation, he spent three months volunteering in Uganda and remains active in humanitarian work across Africa.</p>
           <p>Outside of work, Travis enjoys traveling, public speaking, and spending time with his wife and five children.</p>
@@ -1667,7 +1672,7 @@
         name: 'Mark Hasebroock',
         title: 'Senior Advisor / Partner',
         body: `
-          <p>Mark Hasebroock is President of Dundee M&A and one of Omaha's most recognized entrepreneurs and investors. As the founder and Managing Partner of Dundee Venture Capital, Mark has spent over 15 years backing and building companies across the Midwest, deploying more than $100 million across four funds and investing in over 50 companies.</p>
+          <p>Mark Hasebroock is a Senior Advisor and Partner at Dundee M&A and one of Omaha's most recognized entrepreneurs and investors. As the founder and Managing Partner of Dundee Venture Capital, Mark has spent over 15 years backing and building companies across the Midwest, deploying more than $100 million across four funds and investing in over 50 companies.</p>
           <p>Mark's entrepreneurial roots run deep. He co-founded GiftCertificates.com in the late 1990s and went on to co-found Hayneedle — a home furnishings retailer that raised capital from Sequoia Capital and Insight Venture Partners before exiting to Jet.com in 2016, which was subsequently acquired by Walmart. Earlier in his career, he served as a Managing Director at McCarthy Capital, giving him a rare combination of operator, founder, and institutional investment experience.</p>
           <p>At Dundee M&A, Mark brings his decades of deal experience, deep Midwest networks, and founder-first perspective to help business owners navigate one of the most consequential decisions of their lives. He is a Kauffman Fellow and a board member of Children's Hospital & Medical Center in Omaha.</p>
           <p>Mark is a University of Nebraska-Lincoln alumnus and a lifelong Omaha native. He and his wife Jane have eight children.</p>
@@ -1677,7 +1682,7 @@
         name: 'Danny Woodhead',
         title: 'Senior Advisor / Partner',
         body: `
-          <p>Danny Woodhead is a Managing Partner at Dundee M&A and one of Nebraska's most beloved athletes turned business leaders. A North Platte native, Danny went undrafted out of Division II Chadron State before carving out a celebrated 10-year NFL career with the Jets, Patriots, Chargers, and Ravens — appearing in Super Bowl XLVI and retiring with over 4,900 all-purpose yards and 32 touchdowns. He was inducted into the College Football Hall of Fame in 2024.</p>
+          <p>Danny Woodhead is a Senior Advisor and Partner at Dundee M&A and one of Nebraska's most beloved athletes turned business leaders. A North Platte native, Danny went undrafted out of Division II Chadron State before carving out a celebrated 10-year NFL career with the Jets, Patriots, Chargers, and Ravens — appearing in Super Bowl XLVI and retiring with over 4,900 all-purpose yards and 32 touchdowns. He was inducted into the College Football Hall of Fame in 2024.</p>
           <p>The same relentless work ethic and team-first mentality that defined his playing days now drives his work in business. Known as a fierce negotiator — Danny personally stepped in front of his own agent to negotiate his NFL contracts — he brings that same sharp, direct approach to the deal table at Dundee M&A. With a background in strategic consulting, leadership development, and performance coaching, Danny is a trusted advocate for business owners navigating the most important transaction of their lives.</p>
           <p>Today he is a sought-after speaker, consultant, and mentor whose impact extends well beyond the field.</p>
         `
@@ -1686,7 +1691,7 @@
         name: 'Paul Lanphier',
         title: 'Senior Advisor / Partner',
         body: `
-          <p>Paul Lanphier is a Managing Partner at Dundee M&A with a background spanning leadership development, strategic planning, sales, and community impact. Having personally navigated multiple business exits, Paul brings firsthand knowledge of what business owners experience on both sides of a transaction — making him a uniquely empathetic and effective advisor.</p>
+          <p>Paul Lanphier is a Senior Advisor and Partner at Dundee M&A with a background spanning leadership development, strategic planning, sales, and community impact. Having personally navigated multiple business exits, Paul brings firsthand knowledge of what business owners experience on both sides of a transaction — making him a uniquely empathetic and effective advisor.</p>
           <p>His experience working across the business, wellness, and nonprofit sectors — including leadership roles at Hope Center for Kids, ABIDE, Thrive Homes, and Total Wellness — gives him a unique perspective on what it takes to build something meaningful and sustainable.</p>
           <p>At Dundee M&A, Paul's strengths in relationship-building, strategic planning, and hard-won transaction experience make him a trusted guide for business owners ready to take their next chapter seriously.</p>
           <p>Paul holds a degree in Business from Bellevue University and is a lifelong Omaha community builder.</p>
